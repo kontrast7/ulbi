@@ -8,12 +8,12 @@
     "module": "es6",
     // TODO: В какую спецификацию компилируем: для поддержки большинства браузеров
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     // TODO: Компилятор будет обрабатывать не только TS файлы, но и JS файлы
     "allowJs": true,
     "moduleResolution": "node",
     // TODO: для абсолютного импорта
-    "baseUrl": ".",
+    //    "baseUrl": ".",
     // TODO: esModuleInterop позволяет работать с пакетами, которые используют
     // common js как с обычными пакета с помощью import (require() module.export) = common js
     // import Moment from 'moment';
