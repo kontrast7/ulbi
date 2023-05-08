@@ -1,35 +1,21 @@
-import path from "path";
 import webpack from "webpack";
-import { buildLoaders } from "./config/build/buildLoaders";
-import { buildPlugins } from "./config/build/buildPlugins";
+import path from "path";
+import { buildWebpackConfig } from "./config/build/buildWebpackConfig";
+import { BuildPath } from "./config/build/types/config";
 
-const config: webpack.Configuration = {
-  // * development || production (минифицирует js файл)
-  mode: "development",
-
-  // * точка входа
+const paths: BuildPath = {
   entry: path.resolve(__dirname, "src", "index.ts"),
-
-  // * файлы на выходе
-  output: {
-    filename: "[name].[contenthash].js",
-    path: path.resolve(__dirname, "dist"),
-    clean: true,
-  },
-
-  // * html-webpack-plugin нужен для внедрения JS в index.html
-  // * ProgressPlugin показывает проценты сборки (Progress Bar)
-  plugins: buildPlugins(),
-
-  // * преобразование ts в js
-  module: {
-    rules: buildLoaders(),
-  },
-
-  // * импорты в файлах без расширений (.tsx .ts .js)
-  resolve: {
-    extensions: [".tsx", ".ts", ".js"],
-  },
+  build: path.resolve(__dirname, "dist"),
+  html: path.resolve(__dirname, "public", "index.html"),
 };
+
+const mode = "development";
+const isDev = mode === "development"
+
+const config: webpack.Configuration = buildWebpackConfig({
+  mode: "development",
+  paths,
+  isDev
+});
 
 export default config;
