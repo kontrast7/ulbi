@@ -1,6 +1,7 @@
 import path from "path";
 import webpack from "webpack";
-import HTMLWebpackPlugin from "html-webpack-plugin";
+import { buildLoaders } from "./config/build/buildLoaders";
+import { buildPlugins } from "./config/build/buildPlugins";
 
 const config: webpack.Configuration = {
   // * development || production (минифицирует js файл)
@@ -12,22 +13,17 @@ const config: webpack.Configuration = {
   // * файлы на выходе
   output: {
     filename: "[name].[contenthash].js",
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "dist"),
     clean: true,
   },
 
   // * html-webpack-plugin нужен для внедрения JS в index.html
   // * ProgressPlugin показывает проценты сборки (Progress Bar)
-  plugins: [
-    new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, "public", "index.html"),
-    }),
-    new webpack.ProgressPlugin(),
-  ],
+  plugins: buildPlugins(),
 
   // * преобразование ts в js
   module: {
-    rules: [{ test: /\.tsx?$/, use: "ts-loader", exclude: /node_modules/ }],
+    rules: buildLoaders(),
   },
 
   // * импорты в файлах без расширений (.tsx .ts .js)
