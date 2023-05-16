@@ -6,6 +6,6 @@ export function cn(cls: string, additional?: string[], mods?: Mods): string {
         .filter(([_, value]) => Boolean(value))
         .map(([className, value]) => className)
     : [];
-  const additionalData = additional || [];
+  const additionalData = additional ? additional.filter(Boolean) : [];
   return [cls, ...additionalData, ...modsData].join(" ");
 }
