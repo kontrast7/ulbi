@@ -8,6 +8,7 @@ export interface BuildPath {
   build: string;
   html: string;
   src: string;
+  tsconfig: string;
 }
 
 export interface BuildEnv {
