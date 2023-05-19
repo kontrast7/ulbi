@@ -17,7 +17,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} />
             </div>
-            <button onClick={() => setCollapsed((prev) => !prev)}>+</button>
+            <button type="button" onClick={() => setCollapsed((prev) => !prev)}>+</button>
         </div>
     );
 };

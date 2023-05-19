@@ -7,21 +7,29 @@ declare module '*.scss' {
 }
 
 declare module '*.svg' {
+  import React from 'react';
+
   const content: React.VFC<React.SVGProps<SVGSVGElement>>;
   export default content;
 }
 
 declare module '*.png' {
+  import React from 'react';
+
   const content: React.VFC<React.ImgHTMLAttributes<HTMLImageElement>>;
   export default content;
 }
 
 declare module '*.jpg' {
+  import React from 'react';
+
   const content: React.VFC<React.ImgHTMLAttributes<HTMLImageElement>>;
   export default content;
 }
 
 declare module '*.jpeg' {
+  import React from 'react';
+
   const content: React.VFC<React.ImgHTMLAttributes<HTMLImageElement>>;
   export default content;
 }
