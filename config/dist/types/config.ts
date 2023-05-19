@@ -1,6 +1,5 @@
 // * development || production (минифицирует js файл)
-export type BuildMode = "development" | "production";
-
+export type BuildMode = 'development' | 'production';
 
 // * точки входа
 export interface BuildPath {
