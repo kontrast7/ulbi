@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { cn } from '@lib';
-import { Theme, useTheme } from '@app/providers/theme-provider';
+import { Theme, useTheme } from '@app/providers';
 import { Button, ThemeButton } from '@ui';
 import LightIcon from '@assets/icons/LightIcon.svg';
 import DarkIcon from '@assets/icons/DarkIcon.svg';

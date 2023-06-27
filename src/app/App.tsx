@@ -1,12 +1,15 @@
-import React, { Suspense } from 'react';
-import { useTheme } from '@app/providers/theme-provider';
+import React, { Suspense, useEffect } from 'react';
+import { useTheme, AppRouter } from '@app/providers';
 import { cn } from '@lib';
-import { AppRouter } from '@app/providers/routes';
 import { Navbar, Sidebar } from '@widgets';
 import './styles/index.scss';
 
 const App = () => {
     const { theme } = useTheme();
+
+    useEffect(() => {
+
+    }, []);
 
     return (
         <div className={cn('app', [theme])}>
