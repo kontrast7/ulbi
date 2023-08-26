@@ -3,7 +3,7 @@ import {
     LOCAL_STORAGE_THEME_KEY,
     Theme,
     ThemeContext,
-} from '../../lib/theme-context';
+} from '@app/providers/theme-provider/lib/theme-context';
 
 const ThemeProvider: FC = ({ children }) => {
     const [theme, setTheme] = useState<Theme>(
